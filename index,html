@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CS2 Кейсы</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+    .drop-result {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <h1>CS2 Кейсы</h1>
+  <button onclick="openCase()">Открыть кейс</button>
+  <div class="drop-result" id="result"></div>
+
+  <script>
+    const items = [
+      "★ Нож",
+      "AK-47 | Redline",
+      "AWP | Asiimov",
+      "M4A1-S | Hyper Beast",
+      "P250 | Sand Dune",
+      "USP-S | Kill Confirmed"
+    ];
+
+    function openCase() {
+      const drop = items[Math.floor(Math.random() * items.length)];
+      document.getElementById("result").innerText = "Выпало: " + drop;
+    }
+  </script>
+</body>
+</html>
