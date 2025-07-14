@@ -65,4 +65,10 @@
       const drop = items[Math.floor(Math.random() * items.length)];
       const result = document.getElementById("result");
       result.innerText = "Выпадает...";
-      setTimeout
+      setTimeout(() => {
+        result.innerText = "Выпало: " + drop;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
