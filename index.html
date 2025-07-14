@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DropZone - Открытие кейсов CS2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at center, #121212, #000000);
+      color: #f5f5f5;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #00ffd5;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+    button {
+      padding: 15px 40px;
+      font-size: 20px;
+      background: linear-gradient(45deg, #00ffd5, #0077ff);
+      color: #000;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 255, 213, 0.6);
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    .drop-result {
+      margin-top: 30px;
+      font-size: 1.8em;
+      color: #ffcc00;
+      text-shadow: 0 0 5px #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <h1>DROPZONE</h1>
+  <button onclick="openCase()">🎲 Открыть кейс</button>
+  <div class="drop-result" id="result"></div>
+
+  <script>
+    const items = [
+      "★ Нож | Fade",
+      "AWP | Dragon Lore",
+      "AK-47 | Fire Serpent",
+      "M4A4 | Howl",
+      "Glock-18 | Moonrise",
+      "USP-S | Cortex",
+      "P250 | Sand Dune 😢"
+    ];
+
+    function openCase() {
+      const drop = items[Math.floor(Math.random() * items.length)];
+      const result = document.getElementById("result");
+      result.innerText = "Выпадает...";
+      setTimeout(() => {
+        result.innerText = "Выпало: " + drop;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
